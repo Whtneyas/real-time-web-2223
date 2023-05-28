@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat system</title>
+    <link rel="stylesheet" href="/styles/home.css">
+
+</head>
+
+
+<body>
+    <div>
+        <header>
+            <div>
+                <span>A</span>
+                <span>B</span>
+                <span>C</span>
+            </div>
+            <h1>QuizMe</h1>
+        </header>
+
+        <form action="./chat" id="usernameForm">
+            <label for="username">Enter username</label>
+            <input id="usernameInput" type="text" name="username" placeholder="Enter Username">
+
+            <button id="create-user-btn" type="submit">Let's Play</button>
+        </form>
+    </div>
+
+
+    <section class="chatsystem">
+      
+
+        <div class="quiz-chat-container">
+            <div class="fixed-container">
+                <section id="quiz-container">
+                    <h2>GENERAL KNOWLEDGE QUIZ </h5>
+                        <div id="question-text"></div>
+                        <div id="choices-list"></div>
+                        <button id="next-question-btn">Next</button>
+                </section>
+            </div>
+
+
+
+            <section class="chat-container">
+                <h3>Chat here</h3>
+                <ul id="messages"></ul>
+
+                <div id="typing-indicator"></div>
+                <div class="form-container ">
+                    <form action="" id="chat-form">
+                        <input id="chat-input" type="text" autocomplete="off">
+                        <button><span>Send</span></button>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+    </section>
+    <%- include("./partials/footer") %>
+
+</body>
+
+</html>

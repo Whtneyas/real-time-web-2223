@@ -1,146 +1,288 @@
-# Real-Time Web @cmda-minor-web 2022 - 2023
 
-## Table of Contents
-- [Synopsis](#synopsis)
-- [Description](#description)
-- [Communication](#communication)
-- [Goals](#goals)
-- [Grading](#grading)
-- [Programme](#programme)
 
-## Synopsis
-- Course: Real-Time Web
-- Course Coordinator: Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5))
-- Minor Coordinator(s): Robert Spier ([@roberrrt-s](https://github.com/roberrrt-s)) & Vasilis van Gemert ([@vasilisvg](https://github.com/vasilisvg))
-- Lecturers: Shyanta Vleugel ([@shyanta](https://github.com/shyanta)) & Justus Sturkenboom ([@ju5tu5](https://github.com/ju5tu5))
-- Student Assistants: 
-- Credit: 3 ECTS credits
-- Academic year: 2022-2023
-- Programme: Communication and Multimedia Design (full time bachelor)
-- Language: Dutch instructions and English resources
 
-## Description
-During this course you will learn how to build a real-time application. You will learn techniques to setup an open connection between the client and the server. This will enable you to send data in real-time both ways, at the same time.
+# General Knowledge Quiz 
+<img width="911" alt="image" src="https://github.com/Whtneyas/real-time-web-applicatie/assets/90154152/c2c6fe17-ff54-42db-8704-99452d00fb7e">
 
-## Communication
-- [Github](https://github.com/cmda-minor-web/real-time-web-2223)
-- [Microsoft Teams](https://teams.microsoft.com/l/channel/19%3a61df853840064eae8ae6fc2dc9fc4566%40thread.tacv2/09%2520Real%2520Time%2520Web?groupId=c8b97eb6-ad53-4531-ad66-5c3c6297951c&tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7)
-- [Brightspace](https://dlo.mijnhva.nl/d2l/home/456154)
 
-If you have questions:
-- [Look at the additional resources]()
-- [Use a search engine like startpage](https://www.startpage.com/)
-- [Ask questions on MS Teams](https://teams.microsoft.com/l/channel/19%3a61df853840064eae8ae6fc2dc9fc4566%40thread.tacv2/09%2520Real%2520Time%2520Web?groupId=c8b97eb6-ad53-4531-ad66-5c3c6297951c&tenantId=0907bb1e-21fc-476f-8843-02d09ceb59a7) (please help each other!)
-- [Contact a student-assisstant](#synopsis)
-- [Contact a lecturer](#synopsis)
+## Table of content
+- [General Knowledge Quiz](#general-knowledge-quiz)
+  * [Table of content](#table-of-content)
+  * [Course](#course)
+  * [Features i would like to use](#features-i-would-like-to-use)
+    + [Must have](#must-have)
+    + [Should have](#should-have)
+  * [Installation](#installation)
+    + [Install dependencies](#install-dependencies)
+    + [Start server](#start-server)
+    + [Express server](#express-server)
+  * [Socket.io](#socketio)
+    + [Nodemon](#nodemon)
+    + [EJS](#ejs)
+  * [Proof of concept](#proof-of-concept)
+  * [Concept 1 - Guess the lyrics](#concept-1---guess-the-lyrics)
+    + [Features](#features)
+  * [Concept 2 - Quiz Geography](#concept-2---quiz-geography)
+  * [Concept 3 - Scribbl game](#concept-3---scribbl-game)
+  * [Chosen Concept - Quiz app](#chosen-concept---quiz-app)
+    + [Features](#features-1)
+  * [API - Trivia api](#api---trivia-api)
+    + [Fetching trivia Api](#fetching-trivia-api)
+  * [Usage](#usage)
+  * [Realtime events used](#realtime-events-used)
+  * [Data life circle](#data-life-circle)
+  * [Data modeling](#data-modeling)
+  * [Designs in figma](#designs-in-figma)
 
-## Goals
-After finishing this program you can:
-- _deal with real-time complexity;_
-- _handle real-time client-server interaction;_
-- _handle real-time data management;_
-- _handle multi-user support._
 
-## Grading
-Your efforts will be graded using a single point rubric (see below). You will have to pass the criterion (centre column) to pass the course. During the test you will be consulted and will be given feedback on things we think deficient and things we think are an improvement on the criterion.
 
-| Deficiency | Criterion | Improvement |
-|:--|:--|:--|
-|  | *Project* Your app is working and published on Heroku. Your project is thoroughly documented in the `README.md` file in your repository. Included are a description of the data-lifecycle, real-time events and external data source used by your app. |  |
-|  | *Complexity* You’ve implemented enough real-time functionality for us to test your comprehension of the subject. A lot of functionality is self-written. You are able to manipulate online examples live. |  |
-|  | *Client-server interaction* By interacting with the app, a user can influence the data model of the server in real time by directly modifying data OR by influencing API requests between server and source. The student has set up the data manipulations. |  |
-|  | *Data management* The server maintains a data model and each client is continuously updated with the correct data. |  |
-|  | *Multi-user support* Multiple clients can connect to the server. Interaction works as expected and is not dependent on the number of clients. You can explain how your app approaches this. |  |
 
-## Programme
 
-### Daily Schedule
-To keep things simple we use a daily schedule that will be used during normal course days (monday/tuesday). We make exceptions for fridays, on these days a different schedule will be given.
+## Course
 
-| Time | Who | Activity |
-|:--|:--|:--|
-| *~09:00* | *(Shyanta \|\| Justus)* | *Standup* |
-| 09:30 | Tribe *+(Shyanta \|\| Justus)* | Talk with crucial information (make sure you attend!) |
-| 11:00 | Tribe | Work on the (day)assignment |
-|  | Per table *+(Shyanta \|\| Justus)* | Standup |
-| 13:00 | Tribe *+(Student assistants)* | Continue work on the (day)assignment |
-| 16:00ish | Tribe | Wrapup |
+For this course we have build a chat system which is also a real time web app. This course will help us to learn techniques to set up an open connection between the client and the srever. This will enable us to send dat in real time both ways at the same time. 
 
-### Week 1 - Getting a grip
-Goal: Build and deploy a simple but unique real-time app
 
-#### Monday 17 April 
-**Talk subjects:** Hit the ground running... [(slides)](https://docs.google.com/presentation/d/1MLSch_uKNEDyfz7fo71jbJrprunxQwd9GtgTse8wWpo) Course objective and explanation of the assignment, examples from last year, explanation of real-time, (live coded) bare bone chat app and deployment on Heroku.\
-**Day assignment:** [(assignment)](./course/week-1.md#assignment-1-make-it-so) Make it so *(as a team)*: Implement (code/style/discuss/deploy) basic chat (or other realtime) functionality on your teampage!
+## Features i would like to use 
+ i am going to use the Moscow method . The moscow method is a techniyue used to categorize requiremts or features into four catergproes. We have the must - haves, should - haves, Could-haves, wont-haves. 
+ Right now i want to focus on the first 3 excluding the wont-have. 
+ 
+### Must have 
+- Chat with multiple users
+- Receive and send real time data. 
+- Display of usernames 
+- When user leave the chat 
+- Display Quiz question
+- Display multiple question 
+-
 
-#### Tuesday 18 April
-**Talk subjects:** My first realtime web app! [(slides)](https://docs.google.com/presentation/d/18eftO3epzIXDjdwl3cn5Wq99fkQYCUnExUqq9P72A3k) Short recap, (local) data management, using (wire) flows for realtime web apps.\
-**Day assignment:** [(assignment)](./course/week-1.md#assignment-2-make-it-so) Make it so *(individually)*. i) Create (code/style/discuss/deploy) a chat app (or other realtime functionality) based on the examples and ii) add your own unique feature!
+### Should have 
+  - show when user is online 
+  - Show when user is offline 
+  - Show time when chat is sent 
+  - Score board 
+  - See the time a message is sent 
+  - Display when user is typing 
+  
+ ## Installation
+ The installation of this project is very easy. In this part you can read how to install this project. Just follow the steps below.
 
-#### Friday 21 april
+ ###What you need to install for this project:
 
-Friday ~~afternoon~~ morning we will have a [peer review session](./course/peer-review.md). You will read, comment and fire issues on each others code. Doing this is really good for your programming insight and helps others refining/refactoring their code.
+  - Node.js
+  - NPM
+  - Express
+  - Socket.io
+  -  EJS
+  - Nodemon
 
-| Time | Who | Activity |
-|:--|:--|:--|
-| 9:30 | Tribe *+(Shyanta \|\| Justus)* | Peer review |
-| 11:00 | Tribe *+(Shyanta \|\| Justus)* | Afronding Peer review |
+For deployment **Railway** was used and the main one. But Adaptable was also used for backup.
 
-### Week 2 - Sockets and data
-Goal: Store, manipulate and share data between server-client   
+Clone repository
+Git clone https://github.com/RainbowJM/real-time-web
 
-#### Monday 24 April
-**Talk subjects:** Data driven development?! [(slides)](https://docs.google.com/presentation/d/1WC1DxkQm2eUCTQp7dEfv0cTVMK7zlg3der0P0qP7S5I) Feedback about last week, final assignment and conditions (rubric), explanation of data management, Long polling vs Websockets. \
-**Day assignment:** [(assignment)](./course/week-2.md#assignment-1-proof-of-concept) (Proof of) Concept *(individually)*. i) Create a (3 > 1) concept based on existing data from an API and ii) map this data using modelling techniques.
+### Install dependencies
+To install the dependencies you have to run the following command in your terminal:  npm install node-js npm install express npm install socket.io npm install ejs npm install nodemon npm install supabase
 
-#### Tuesday 25 April
-**Talk subjects:** Above all else, show the data. [(slides)](https://docs.google.com/presentation/d/1tW4klrDjt1AfWte311uKkfQYwaHwokzQ-ue3a4VphqA) Securing real-time web apps, offline support, the publication/subscription model\
-**Day assignment:** [(assignment)](./course/week-2.md#assignment-2-proof-of-concept) Proof of concept *(individually)*: i) Create (code/style/discuss/deploy) part of the core functionality for your concept and ii) show the  corresponding data lifecycle diagram.
+### Start server
+npm run dev
 
-### Week 3 - Dealing with multiple users
-Goal: Handle data sharing and multi-user support 
+### Express server
+When you have installed the Express dependencies you can start using it in the project.
 
-#### Monday 8 May
-**Talk subjects:** Roll your own... [(slides) ](https://docs.google.com/presentation/d/1ACuUJ-B19hgFN2CCTYH8ClN0WD69ok8ZVnkRGbU0FjA) Data management, the functional programming trinity (map, filter and reduce). OAuth?!
-**Day assignment:** [(assignment)](./course/week-3.md#assignment-1-data-management)
+The code below is the basic code to start using express in your project. This will be in the app.js file.
 
-#### Tuesday 9 May
-**Talk subjects:** Not ignoring the UI-Stack! [(slides)](). Usability, feedback, feedforward etc. in real-time web apps, (case study) postNL loader and FAQ.
-**Day assignment:** [(assignment)](./course/week-3.md#assignment-2-user-testing)
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 4242;
 
-#### Friday 12 May
-We will have a final [peer review session](./course/peer-review.md). You will read, comment and fire issues on each others code. Doing this helps others dotting the i’s on their project.
+app.use(express.static(path.resolve('public')));
+app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
-| Time | Who | Activity |
-|:--|:--|:--|
-| 14.00 | Tribe *+(Shyanta \|\| Justus)* | Peer review |
-| 15.30 | Tribe *+(Shyanta \|\| Justus)* | Finalize your assignment |
-| 16.00 | Tribe *+(Shyanta \|\| Justus)* | (drinks?!) |
+http.listen(port, () => {
+    console.log(`Example app listening on  http://localhost:${port}`)
+});
 
-<!-- Here are some hints for your projects Readme.md! -->
+## Socket.io
+When you have installed the Socket.io dependencies you can start using it in the project.
 
-<!-- Start out with a title and a description -->
+The code below is the basic code to start using socket.io in your project. This will be in the app.js file.
 
-<!-- Add a nice image here at the end of the week, showing off your shiny frontend 📸 -->
+`const io = require('socket.io')(http);
+const http = require('http').createServer(app);
 
-<!-- Add a link to your live demo in Github Pages 🌐-->
+io.on('connection', (socket) => {
+	console.log('a user connected');
+});`
 
-<!-- replace the code in the /docs folder with your own, so you can showcase your work with GitHub Pages 🌍 -->
+### Nodemon
+When you have installed the Nodemon dependencies you can start using it in the project.
 
-<!-- Maybe a table of contents here? 📚 -->
+The code below is the basic code to start using nodemon in your project. This will be in the package.json file.
 
-<!-- ☝️ replace this description with a description of your own work -->
+"scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+},
 
-<!-- How about a section that describes how to install this project? 🤓 -->
+### EJS
+When you have installed the EJS dependencies you can start using it in the project.
 
-<!-- ...but how does one use this project? What are its features 🤔 -->
+The code below is the basic code to start using EJS in your project. This will be in the app.js file.
 
-<!-- What external data source is featured in your project and what are its properties 🌠 -->
+app.set("views", path.join(__dirname, "views"));
+app.set('view engine', 'ejs');
+Supabase
+When you have installed the Supabase dependencies you can start using it in the project.
 
-<!-- This would be a good place for your data life cycle ♻️-->
 
-<!-- Maybe a checklist of done stuff and stuff still on your wishlist? ✅ -->
 
-<!-- We all stand on the shoulders of giants, please link all the sources you used in to create this project. -->
 
-<!-- How about a license here? When in doubt use MIT. 📜  -->
+## Proof of concept 
+
+ Proof of concept is a test that is done to see if an idea, technology or product can work the way it is intended. It involves creating a prototype or model that is tested to determine if it meets the desired objectives before investing further resources into its development.
+I have three concepts in mind, and I will choose one out of the three to work with further.
+
+## Concept 1 - Guess the lyrics
+My first concept is tO guess the lyrics concept. i think this idea or design already exist. With this guess de lyrics game. Multiple users have to play to make it more fun. The user first log in with his or her name and waits still other players join to start. The user can also play it individual if there is no one joing the game. 
+
+###  Features 
+- A logging in with user name 
+- Users can see when other users are online;
+- Users  can see other user when typing 
+- Users can see when a user is typing. 
+- User can also see the time of the chat
+- Scores will be displayed . 
+
+
+## Concept 2 - Quiz Geography 
+
+The second concept is a geographical quiz game whereby the user guesses the answer by choosing from multiple answers. First of all the user would have to log in with his or her username to join the quiz.After finishing the quiz the user will see his or her scores on a board 
+
+
+
+## Concept 3 - Scribbl game 
+My last concept was to create a scribbr game where user can guess a word by drawings of others and also create their own scribble game.
+
+
+
+## Chosen Concept - General knowledge Quiz app 
+
+
+My final choice for the project is to develop a comprehensive general knowledge quiz application. The application will provide users with the ability to create accounts and log in using their usernames. Once logged in, users will have the opportunity to participate in interactive quizzes while simultaneously engaging in real-time chat conversations.
+
+The quiz functionality will be designed to present questions in a multiple-choice format, offering users a range of options to choose from. Upon selecting an answer, the application will promptly provide immediate feedback, informing the user whether their response was correct or incorrect. This instant feedback mechanism aims to enhance the user experience and facilitate a sense of engagement and learning.
+
+In addition to the quiz component, the application will feature a chat system that allows users to communicate with each other in real-time. This chat functionality will enable users to discuss quiz questions, share insights, and interact with fellow participants. By combining the quiz and chat features, the application will create a dynamic and collaborative environment where users can test their knowledge, learn from one another, and foster a sense of community.
+
+With this gener
+
+<img width="268" alt="image" src="https://user-images.githubusercontent.com/90154152/234077983-1d02d34d-a577-4b95-842a-d51580937a23.png">
+
+
+
+### Features 
+
+- Login with username 
+- User should be able to see other users when online of offline
+- User should be able to upload foto's from the chat room 
+- User should be able to see when another user is typing. 
+- User should see the time a message was sent. 
+- User should able to see other participants 
+- User should able to participate in a quiz. 
+- User should be able to participate in a group chat
+- See overview of all participants 
+
+
+## API - Trivia api 
+Link: https://opentdb.com/api_config.php
+
+In order to implement various quiz topics within my project, I plan on utilizing Trivia API, a website that allows you to generate an api based on a quiz topic . Because there wasn't much time on my side so i had to choose one topic to work on. SO i chose the general knowledge quiz. 
+
+### Fetching trivia Api 
+
+The  code below  fetches trivia general knowledge  questions from an API using the axios library. It then processes the response to extract the questions, correct answers, and choices. The first question is sent to a connected client through a socket connection. The current question index and all the questions are stored in the socket object. If there is an error, it logs an error message.
+
+<img width="437" alt="image" src="https://github.com/Whtneyas/real-time-web-applicatie/assets/90154152/d3145b93-6e0f-4cf7-9be6-fe7af574fc45">
+
+## Usage 
+
+ * Log in by inputting your username 
+  <img width="896" alt="image" src="https://github.com/Whtneyas/real-time-web-applicatie/assets/90154152/3506d035-19be-423f-9d81-77bf7a6a955c">
+  
+ * Chat with users in the chat 
+ <img width="857" alt="image" src="https://github.com/Whtneyas/real-time-web-applicatie/assets/90154152/10a7ec0e-3603-42ff-b9b1-a344fa044aa5">
+ 
+ * Play quiz 
+ <img width="634" alt="image" src="https://github.com/Whtneyas/real-time-web-applicatie/assets/90154152/11f469ab-d743-466b-bb14-9b957dfa883e">
+
+
+ * Display correct and wrong answers
+<img width="902" alt="image" src="https://github.com/Whtneyas/real-time-web-applicatie/assets/90154152/9b64ab94-d05f-4421-ba31-2c5294590c1a">
+
+
+
+
+  
+
+
+
+
+
+## Realtime events used
+- connection: This event is used to connect the client to the server.
+- disconnect: This event is used to disconnect the client from the server.
+- message: This event is used to send a message from the client to the server.
+- answer: This event is used to send an answer from the client to the server.
+- question: This event is for receiving questions from the server.
+- history: This event is used to send the history of the chat from the server to the client.
+- typing: This event is used to send a indicator that a user is typing.
+- wrong answer: This event is used when the answer is wrong.
+- data: This event is used to send the data of the game to the client.
+- user: This event is used to send the user data to the server.
+- users: This event is used to send the users data to the client.
+- time : This event shows the time the message is sent from all users.
+- disconnected: This event checks if the user is disconnected from the server. If so it give a notification that the user left in the chat.
+- user-joined: This event is used when the the user joins the chat 
+- user-left: This event is used when the user leaves the chat.
+- quizEnd: This event is use when thee user come to the end of the game 
+- nextquestion: This event is triggered when the client request the next question in the quiz.
+
+
+## Data life circle 
+
+
+## Data modeling 
+
+
+<img width="521" alt="image" src="https://user-images.githubusercontent.com/90154152/234083042-1bec3664-1f6a-4212-81ee-af54c950dee9.png">
+
+
+
+## Designs in figma 
+To get a view of how the application will look. I made designs in figma so that when i start coding i won't have t think of the color i will be using or how it should look like. So i thought of making my designs reading before i start coding. 
+<img width="408" alt="image" src="https://user-images.githubusercontent.com/90154152/235462118-395ff86e-c10d-4c0e-b7c0-334c542e5a4d.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
