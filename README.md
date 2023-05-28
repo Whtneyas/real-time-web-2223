@@ -8,6 +8,7 @@
 ## Table of content
 - [General Knowledge Quiz](#general-knowledge-quiz)
   * [Table of content](#table-of-content)
+  * [Live Demo](#live-demo)
   * [Course](#course)
   * [Features i would like to use](#features-i-would-like-to-use)
     + [Must have](#must-have)
@@ -36,6 +37,8 @@
 
 
 
+## Live demo 
+ https://general-knowledge-quiz.adaptable.app/
 
 
 ## Course
@@ -78,8 +81,8 @@ For this course we have build a chat system which is also a real time web app. T
 
 For deployment **Railway** was used and the main one. But Adaptable was also used for backup.
 
-Clone repository
-Git clone https://github.com/RainbowJM/real-time-web
+### Clone repository
+Git clone [https://github.com/RainbowJM/real-time-web](https://github.com/Whtneyas/real-time-web-2223.git)
 
 ### Install dependencies
 To install the dependencies you have to run the following command in your terminal:  npm install node-js npm install express npm install socket.io npm install ejs npm install nodemon npm install supabase
@@ -251,13 +254,10 @@ The  code below  fetches trivia general knowledge  questions from an API using t
 - nextquestion: This event is triggered when the client request the next question in the quiz.
 
 
+
 ## Data life circle 
+<img width="500" alt="image" src="https://github.com/Whtneyas/real-time-web-applicatie/assets/90154152/923b26d0-c32d-412b-ba0d-1982fff037ac">
 
-
-## Data modeling 
-
-
-<img width="521" alt="image" src="https://user-images.githubusercontent.com/90154152/234083042-1bec3664-1f6a-4212-81ee-af54c950dee9.png">
 
 
 
